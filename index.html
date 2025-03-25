@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume - Wiebke Kaemper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; }
+        
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .language-btn {
+            padding: 8px 16px;
+            border: 2px solid #2ecc71;
+            background: white;
+            color: #2ecc71;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .language-btn.active {
+            background: #2ecc71;
+            color: white;
+        }
+        
+        .cv-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cv-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Preserve existing styles */
+        #tsparticles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255,255,255,1) 85%, rgba(220,235,220,0.4) 100%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            color: #223323;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Lora', serif;
+        }
+        
+        .section-content {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .section-item {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div id="tsparticles"></div>
+    <div class="resume-container">
+        <div class="header">
+            <div class="language-switch">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <h1>Wiebke Kaemper</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kaemper.wiebke@gmx.de</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0176 23342693</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-home"></i>
+                    <span>Forsthausstraße 30, 65527 Niedernhausen</span>
+                </div>
+            </div>
+        </div>
+        <div id="de-content" class="cv-content active">
+            <div class="section">
+                <h2 class="section-title">Persönliche Daten</h2>
+                <div class="section-content">
+                    <p>Name: Wiebke Kaemper</p>
+                    <p>Geburtsdatum: 13.04.2005</p>
+                    <p>Geburtsort: Wiesbaden</p>
+                    <p>Adresse: Forsthausstraße 30, 65527 Niedernhausen</p>
+                    <p>Telefon: 0176 23342693</p>
+                    <p>E-Mail: kaemper.wiebke@gmx.de</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Profil</h2>
+                <div class="section-content">
+                    <p>Engagierte und zielstrebige Abiturientin mit herausragenden schulischen Leistungen und vielfältigem ehrenamtlichen Engagement. Meine Abenteuerlust und Entschlossenheit zeigen sich in meinen vielfältigen Aktivitäten und Praktika. Ich strebe danach, meine Fähigkeiten und Erfahrungen in einem dynamischen Umfeld einzubringen und weiterzuentwickeln.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Bildungsweg</h2>
+                <div class="section-content">
+                    <div class="section-item">07/2024: Erwerb der Fachhochschulreife mit Abiturnote 1,2</div>
+                    <div class="section-item">08/2015 – 07/2024: Limesschule Idstein, kooperative Gesamtschule, Gymnasialzweig</div>
+                    <div class="section-item">08/2011 – 07/2015: Grundschule Niederseelbach</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Weiterbildungen und Praktika</h2>
+                <div class="section-content">
+                    <div class="section-item">2017: Teilnahme am Schreibwettbewerb "OHNEPUNKTUNDKOMMA"</div>
+                    <div class="section-item">2017: Mitwirkung am Projekt "Schüler lesen Zeitung"</div>
+                    <div class="section-item">2018: Teilnahme am girls`day bei Hessen Forst</div>
+                    <div class="section-item">2018: Besuch eines Tagesseminars in Kynologie</div>
+                    <div class="section-item">2019: Schüleraustausch in Barcelona</div>
+                    <div class="section-item">2019: Praktikum als Chemielaborantin bei Biogrund in Hünstetten/Kesselbach</div>
+                    <div class="section-item">2020: Bewerbungstraining bei der AOK</div>
+                    <div class="section-item">2021: Zertifikat "Mein Mutiger Weg" – Berufswahlkompetenz und Persönlichkeitsentwicklung</div>
+                    <div class="section-item">2022 – 2024: Praktikum in der Tiermedizin bei Dr. Steinmetz in Idstein/Heftrich</div>
+                    <div class="section-item">2022: Erste-Hilfe-Kurs</div>
+                    <div class="section-item">2024/2025: Geplante selbstständige Reise</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Besondere Auszeichnungen und Engagement</h2>
+                <div class="section-content">
+                    <div class="section-item">Auszeichnung für einen positiven Beitrag zum Schulleben an der Limesschule Idstein sowie für die besten Lernleistungen in den Jahrgangsstufen 5–9</div>
+                    <div class="section-item">Mehrjährige Tätigkeit als Nachhilfelehrerin von 2021 bis 2024</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Sprachkenntnisse</h2>
+                <div class="section-content">
+                    <div class="section-item">Deutsch: Muttersprache</div>
+                    <div class="section-item">Englisch: C1</div>
+                    <div class="section-item">Spanisch: B2</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Computerkenntnisse</h2>
+                <div class="section-content">
+                    <div class="section-item">Sicherer Umgang mit gängigen Office-Programmen</div>
+                    <div class="section-item">Erfahren in Internetrecherche und digitaler Kommunikation</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Persönliche Kompetenzen</h2>
+                <div class="section-content">
+                    <div class="section-item">Ausgeprägte Kommunikationsfähigkeit und Aufgeschlossenheit</div>
+                    <div class="section-item">Hervorragende Organisationsfähigkeiten</div>
+                    <div class="section-item">Hohe Lernbereitschaft und Motivation</div>
+                    <div class="section-item">Teamfähigkeit und selbständiges Arbeiten</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Interessen</h2>
+                <div class="section-content">
+                    <div class="section-item">Klavierspielen</div>
+                    <div class="section-item">Reisen und Kulturen kennenlernen</div>
+                    <div class="section-item">Sport und Outdoor-Aktivitäten</div>
+                </div>
+            </div>
+        </div>
+        <div id="en-content" class="cv-content">
+            <div class="section">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="section-content">
+                    <p>Name: Wiebke Kaemper</p>
+                    <p>Date of Birth: April 13, 2005</p>
+                    <p>Place of Birth: Wiesbaden</p>
+                    <p>Address: Forsthausstraße 30, 65527 Niedernhausen</p>
+                    <p>Phone: 0176 23342693</p>
+                    <p>Email: kaemper.wiebke@gmx.de</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Profile</h2>
+                <div class="section-content">
+                    <p>Dedicated and ambitious high school graduate with outstanding academic achievements and diverse volunteer experience. My sense of adventure and determination are reflected in my various activities and internships. I strive to contribute and further develop my skills and experiences in a dynamic environment.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    <div class="section-item">07/2024: University Entrance Qualification (Abitur) with grade 1.2</div>
+                    <div class="section-item">08/2015 – 07/2024: Limesschule Idstein, Comprehensive School, Academic Track</div>
+                    <div class="section-item">08/2011 – 07/2015: Primary School Niederseelbach</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Further Education and Internships</h2>
+                <div class="section-content">
+                    <div class="section-item">2017: Participation in writing competition "OHNEPUNKTUNDKOMMA"</div>
+                    <div class="section-item">2017: Participation in project "Students Read Newspaper"</div>
+                    <div class="section-item">2018: Participation in girls' day at Hessen Forst</div>
+                    <div class="section-item">2018: Attendance of a one-day seminar in Cynology</div>
+                    <div class="section-item">2019: Student exchange in Barcelona</div>
+                    <div class="section-item">2019: Internship as Chemical Laboratory Assistant at Biogrund in Hünstetten/Kesselbach</div>
+                    <div class="section-item">2020: Application Training at AOK</div>
+                    <div class="section-item">2021: Certificate "My Courageous Path" – Career Choice Competence and Personal Development</div>
+                    <div class="section-item">2022 – 2024: Internship in Veterinary Medicine at Dr. Steinmetz in Idstein/Heftrich</div>
+                    <div class="section-item">2022: First Aid Course</div>
+                    <div class="section-item">2024/2025: Planned Independent Travel</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Special Awards and Engagement</h2>
+                <div class="section-content">
+                    <div class="section-item">Award for positive contribution to school life at Limesschule Idstein and for best learning achievements in grades 5-9</div>
+                    <div class="section-item">Several years of activity as a private tutor from 2021 to 2024</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Language Skills</h2>
+                <div class="section-content">
+                    <div class="section-item">German: Native Language</div>
+                    <div class="section-item">English: C1 Level</div>
+                    <div class="section-item">Spanish: B2 Level</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Computer Skills</h2>
+                <div class="section-content">
+                    <div class="section-item">Proficient in common Office programs</div>
+                    <div class="section-item">Experienced in internet research and digital communication</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Personal Skills</h2>
+                <div class="section-content">
+                    <div class="section-item">Strong communication skills and openness</div>
+                    <div class="section-item">Excellent organizational abilities</div>
+                    <div class="section-item">High willingness to learn and motivation</div>
+                    <div class="section-item">Team player and ability to work independently</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Interests</h2>
+                <div class="section-content">
+                    <div class="section-item">Playing piano</div>
+                    <div class="section-item">Traveling and experiencing different cultures</div>
+                    <div class="section-item">Sports and outdoor activities</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.cv-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(lang + '-content').classList.add('active');
+            document.querySelector(`.language-btn[onclick*="${lang}"]`).classList.add('active');
+            
+            // Save the language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Initialize particles
+        tsParticles.load("tsparticles", {
+            fullScreen: false,
+            background: {
+                color: {
+                    value: "transparent"
+                }
+            },
+            fpsLimit: 60,
+            particles: {
+                color: {
+                    value: "#2ecc71"
+                },
+                links: {
+                    color: "#2ecc71",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.2,
+                    width: 1
+                },
+                shape: {
+                    type: "triangle"
+                },
+                size: {
+                    value: { min: 3, max: 6 }
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800
+                    },
+                    value: 80
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    outModes: {
+                        default: "bounce"
+                    }
+                },
+                opacity: {
+                    value: 0.3
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 200,
+                        links: {
+                            opacity: 0.3
+                        }
+                    }
+                }
+            },
+            detectRetina: true
+        });
+
+        // Check for saved language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang) {
+                switchLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>

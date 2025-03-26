@@ -70,19 +70,33 @@
         }
 
         /* Keep all other existing CSS rules below this point */
+        /* Language button styles */
         .language-btn {
             padding: 8px 16px;
-            border: 2px solid #9b59b6;
-            background: white;
-            color: #9b59b6;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
+            background: white;
         }
-        
-        .language-btn.active {
+
+        .language-btn[onclick*="de"] {
+            border: 2px solid #9b59b6;
+            color: #9b59b6;
+        }
+
+        .language-btn[onclick*="de"].active {
             background: #9b59b6;
+            color: white;
+        }
+
+        .language-btn[onclick*="en"] {
+            border: 2px solid #d35400;
+            color: #d35400;
+        }
+
+        .language-btn[onclick*="en"].active {
+            background: #d35400;
             color: white;
         }
         

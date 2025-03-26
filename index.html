@@ -95,6 +95,23 @@
             transform: scale(1.03);
         }
 
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .profile-pic-container:hover::before,
+            .profile-pic-container:hover::after,
+            .profile-pic:hover {
+                animation: none;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Performance Optimization */
+        .profile-pic-container {
+            will-change: transform;
+        }
+
+        /* Mobile Responsiveness Adjustments */
         @media (max-width: 768px) {
             .nav-container {
                 position: relative;
@@ -110,6 +127,60 @@
             .language-switch {
                 width: 120px;
             }
+        }
+
+        @keyframes pulse1, pulse2 {
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+        
+        #tsparticles {
+            opacity: 0.5;
+        }
+
+        /* Contact Info Hover Effects */
+        .contact-item {
+            transition: transform 0.2s ease;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: rgba(155, 89, 182, 0.1);
+        }
+
+        /* Language Switch Transitions */
+        .cv-content {
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(155, 89, 182, 0.9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: rgba(211, 84, 0, 0.9);
         }
 
         /* Keep all other existing CSS rules below this point */
@@ -146,7 +217,7 @@
         .cv-content {
             display: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease-in-out;
         }
         
         .cv-content.active {
@@ -283,7 +354,7 @@
                     <button class="language-btn" onclick="switchLanguage('en')">EN</button>
                 </div>
                 <div class="profile-pic-container">
-                    <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+                    <img src="images/profile.png" alt="Profile Picture of Wiebke Kaemper" class="profile-pic" loading="lazy">
                 </div>
             </div>
             <h1>Wiebke Kaemper</h1>
@@ -579,6 +650,51 @@
                 switchLanguage(savedLang);
             }
         });
+    </script>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top functionality
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Adjust particle density for mobile
+        function updateParticleDensity() {
+            if (window.innerWidth <= 768) {
+                tsParticles.load("tsparticles", {
+                    ...tsParticles.configs,
+                    particles: {
+                        ...tsParticles.configs.particles,
+                        number: {
+                            value: 50,
+                            density: {
+                                enable: true,
+                                area: 800
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('resize', updateParticleDensity);
+        updateParticleDensity();
     </script>
 </body>
 </html>
